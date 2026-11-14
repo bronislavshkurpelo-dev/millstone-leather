@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
   }
 ];
 
-export default function Contacts() {
+export default function Contacts({ onOpenLegal }) {
   const [openFaq, setOpenFaq] = useState(null);
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
@@ -186,6 +186,17 @@ export default function Contacts() {
 
               <p className="text-[11px] text-[#78695d] text-center pt-2">
                 Прямой переход на личную страницу vk.ru/millstone_v
+              </p>
+
+              <p className="text-[10px] text-[#6b5c51] text-center pt-1.5 leading-relaxed">
+                Нажимая кнопку, вы даете согласие на обработку персональных данных в соответствии с{' '}
+                <button
+                  type="button"
+                  onClick={() => onOpenLegal && onOpenLegal('privacy')}
+                  className="text-[#c28e5c] hover:underline"
+                >
+                  Политикой конфиденциальности (152-ФЗ)
+                </button>
               </p>
             </div>
           </div>
